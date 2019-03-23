@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python</title>
+      <link href="/2019/03/23/python/"/>
+      <url>/2019/03/23/python/</url>
+      
+        <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><h3 id="关于python的知识-第一部分"><a href="#关于python的知识-第一部分" class="headerlink" title="关于python的知识(第一部分)"></a>关于python的知识(第一部分)</h3><p>本篇文章是一篇本人学习python的笔记，以及总结的一些易错点。<br><a id="more"></a><br>【print】<br>在Python2中，无需将要打印的内容放在括号内。从技术上说，Python 3中的print是一个函数，因此括号必不可少。有些Python 2 print语句也包含括号，但其行为与Python3中稍有不同。简单地说，在Python 2代码中，有些print语句包含括号，有些不包含。<br>【乘方】<br>用两个乘号表示乘方运算。例：3的4次方为3<strong>4。<br>【非字符化字符】<br>可调用函数str()，它让python将非字符化为字符。<br>【列表末尾添加元素】<br>函数append()可将元素添加到列表末尾<br>【列表中插入元素】<br>函数insert()。例子：在第一个元素加入”c++”，insert(0,’c++’)<br>【知道元素位置删除列表元素】<br>函数del。del 列表名[位置]。<br>【弹出列表元素】<br>函数pop()。列表名.pop(列表元素位置)。<br>可将弹出的元素赋值给其他变量继续使用。<br>【知道元素值删除列表元素】<br>函数remove()。列表名.remove(列表元素值)。<br>可将删除的元素赋值给其他变量继续使用。<br>【sort排序与sorted排序】<br>sort()可永久将列表按字母顺序排序。<br>sorted()可让列表按特定顺序显示，但不影响元素在列表的原始排序<br>sort(reverse=Ture)列表按字母顺序相反排序。sorted()同理。<br>【reserve()反转】<br>reverse()不是指按与字母顺序相反的顺序排列列表元素，而只是反转列表元素的排列顺序。<br>【列表长度】<br>len(列表名)。<br>【for不缩进】<br>在for循环后面，没有缩进的代码都只执行一次，而不会重复执行。<br>【数字列表的最大，最小，总和】<br>min(列表名)。max(列表名)。sum(列表名)。<br>【一行循环输出列表】<br>例子：squares = [value</strong>2 for value in range(1,11)] print(squares) squares = [value<strong>2 for value in range(1,11)] print(squares)要使用这种语法，首先指定一个描述性的列表名，如squares；然后，指定一个左方括号，并定义一个表达式，用于生成你要存储到列表中的值。在这个示例中，表达式为value</strong>2，它计算平方值。接下来，编写一个for循环，用于给表达式提供值，再加上右方括号。在这个示例中，for循环为for value in range(1,11)，它将值1~10提供给表达式value**2。请注意，这里的for语句末尾没有冒号。<br>【切片】<br>例如，如果你要提取列表的第2~4个元素，可将起始索引指定为1，并将终止索引指定为4：players = [‘charles’, ‘martina’, ‘michael’, ‘florence’, ‘eli’] print(players[1:4]) </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>挪威的森林</title>
       <link href="/2019/03/16/afilm/"/>
       <url>/2019/03/16/afilm/</url>
