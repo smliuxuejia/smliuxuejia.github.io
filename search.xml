@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python爬虫实战</title>
+      <link href="/2019/04/07/%E7%88%AC%E8%99%AB/"/>
+      <url>/2019/04/07/%E7%88%AC%E8%99%AB/</url>
+      
+        <content type="html"><![CDATA[<h2 id="python爬虫实践"><a href="#python爬虫实践" class="headerlink" title="python爬虫实践"></a>python爬虫实践</h2><h3 id="爬取在线阅读小说网中的所有小说"><a href="#爬取在线阅读小说网中的所有小说" class="headerlink" title="爬取在线阅读小说网中的所有小说"></a>爬取在线阅读小说网中的所有小说</h3><p>本章是python的实践篇，将用python的两个库函数进行静态网站小说的爬取。（仅供学习使用，并非商业用途，如有侵权请联系）<br><a id="more"></a><br>用python库爬取在线阅读网小说（静态网站爬取）</p><p>【需要用到的库】：<br>requests库<br>BeautifulSoup库</p><p>【步骤】：</p><ol start="0"><li>定义两个列表分别保存网址和章节名</li></ol><p>z = []#用于存放地址的列表<br>x = []#用于存放章名的列表</p><ol><li>用requests库获取网页html文件</li></ol><p>def getsite():#获取章节地址和章节名称并保存<br>    url = input(“请输入目录网址(例：<a href="http://www.yuedu88.com/jieyouzahuodian/)：&quot;" target="_blank" rel="noopener">http://www.yuedu88.com/jieyouzahuodian/)：&quot;</a>)<br>    r = requests.get(url)<br>    r.encoding = “utf-8”<br>    html = r.text</p><ol start="2"><li><p>getsite()函数中用BeautifulSoup库获取每章地址</p><p> bt = BeautifulSoup(html, ‘html.parser’, )<br> texts = bt.find_all(class_=”chapterlist cate”)<br> web = BeautifulSoup(str(texts), ‘html.parser’, )<br> website = web.find_all(‘a’)<br> for site in website:</p><pre><code>z.append(site.get(&apos;href&apos;))  # 保存网址x.append(site.string)  # 保存章节</code></pre><p>3.获取每章内容并保存：</p></li></ol><p>def savefile():#获取章节内容并保存<br>    i = 0<br>    file=input(“请输入存储路径（例：D:\ebook\a.txt）：”)</p><pre><code>while i &lt;= len(z) - 1:    zz = str(i)    re = requests.get(str(z[i]))    re.encoding = &quot;utf-8&quot;    htmlz = re.text    be = BeautifulSoup(htmlz, &apos;html.parser&apos;, )    texte = be.find_all(id=&quot;BookText&quot;)    he = texte[0].text    with open(file, &apos;a&apos;, encoding=&quot;utf-8&quot;) as file_object:        file_object.write(&quot;第&quot; + zz + &quot;章&quot; + &quot; &quot; + x[i])        file_object.write(&apos;\n&apos;)        file_object.write(he)        file_object.write(&apos;\n&apos;)        file_object.write(&apos;\n&apos;)        print(&quot;正在下载第&quot; + zz + &quot;章&quot; +&quot; &quot;+ x[i])    i = i + 1</code></pre><ol start="4"><li>主函数中运行：</li></ol><p>try:<br>    getsite()<br>    savefile()<br>except:<br>    print(“下载失败”)</p><p>【完整代码】：</p><p>from bs4 import BeautifulSoup<br>import requests<br>z = []#用于存放地址的列表<br>x = []#用于存放章名的列表<br>def getsite():#获取章节地址和章节名称并保存<br>    url = input(“请输入目录网址(例：<a href="http://www.yuedu88.com/jieyouzahuodian/)：&quot;" target="_blank" rel="noopener">http://www.yuedu88.com/jieyouzahuodian/)：&quot;</a>)<br>    r = requests.get(url)<br>    r.encoding = “utf-8”<br>    html = r.text<br>    bt = BeautifulSoup(html, ‘html.parser’, )<br>    texts = bt.find_all(class_=”chapterlist cate”)<br>    web = BeautifulSoup(str(texts), ‘html.parser’, )<br>    website = web.find_all(‘a’)<br>    for site in website:<br>        z.append(site.get(‘href’))  # 保存网址<br>        x.append(site.string)  # 保存章节<br>def savefile():#获取章节内容并保存<br>    i = 0<br>    file=input(“请输入存储路径（例：D:\ebook\a.txt）：”)</p><pre><code>while i &lt;= len(z) - 1:    zz = str(i)    re = requests.get(str(z[i]))    re.encoding = &quot;utf-8&quot;    htmlz = re.text    be = BeautifulSoup(htmlz, &apos;html.parser&apos;, )    texte = be.find_all(id=&quot;BookText&quot;)    he = texte[0].text    with open(file, &apos;a&apos;, encoding=&quot;utf-8&quot;) as file_object:        file_object.write(&quot;第&quot; + zz + &quot;章&quot; + &quot; &quot; + x[i])        file_object.write(&apos;\n&apos;)        file_object.write(he)        file_object.write(&apos;\n&apos;)        file_object.write(&apos;\n&apos;)        print(&quot;正在下载第&quot; + zz + &quot;章&quot; +&quot; &quot;+ x[i])    i = i + 1</code></pre><p>try:<br>    getsite()<br>    savefile()<br>except:<br>    print(“下载失败”)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python</title>
       <link href="/2019/03/23/python/"/>
       <url>/2019/03/23/python/</url>
